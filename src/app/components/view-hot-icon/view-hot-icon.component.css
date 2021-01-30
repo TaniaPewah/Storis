@@ -1,0 +1,42 @@
+.scaling-container{
+    position: relative; 
+    height: 100px; 
+    width: 100px; 
+    display: inline-block;
+}
+
+svg{
+    position: absolute; 
+    height: 100%; 
+    width: 100%; 
+    left: 0; 
+    top: 0;
+}
+
+
+#hot-icon{
+    max-width:100%;
+    max-height:100%;
+}
+
+
+#hot-icon #svg_8{
+    stroke: rgb(0, 0, 0);
+    fill: rgb(255 86 34);
+    fill-opacity: 0.85;
+    stroke-width: 0;
+}
+
+#hot-icon #svg_9{
+    stroke: rgb(0, 0, 0);
+    fill: rgb(255 188 63);
+    fill-opacity: 0.85;
+    stroke-width: 0;
+}
+
+#hot-icon #svg_10{
+    stroke: rgb(0, 0, 0);
+    fill: rgb(255 233 72);
+    fill-opacity: 0.85;
+    stroke-width: 0;
+}

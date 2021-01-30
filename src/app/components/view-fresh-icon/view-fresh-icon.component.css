@@ -1,0 +1,39 @@
+.scaling-container{
+    position: relative; 
+    height: 100px; 
+    width: 100px; 
+    display: inline-block;
+}
+
+svg{
+    position: absolute; 
+    height: 100%; 
+    width: 100%; 
+    left: 0; 
+    top: 0;
+}
+
+#fresh-icon{
+    max-width:100%;
+    max-height:100%;
+}
+
+#fresh-icon #svg_1{
+    stroke: rgb(0, 0, 0);
+    fill: rgb(133, 198, 105);
+    stroke-width: 0;
+}
+
+#fresh-icon #svg_4{
+    stroke: rgb(0, 0, 0);
+    fill: rgb(162, 214, 139);
+    fill-opacity: 0.85;
+    stroke-width: 0;
+}
+
+#fresh-icon #svg_5{
+    stroke: rgb(0, 0, 0);
+    fill: rgb(184, 224, 166);
+    fill-opacity: 0.85;
+    stroke-width: 0;
+}

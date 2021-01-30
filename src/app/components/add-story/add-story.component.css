@@ -1,0 +1,24 @@
+.scaling-container{
+    position: relative; 
+    height: 100px; 
+    width: 100px; 
+    display: inline-block;
+}
+
+svg{
+    position: absolute; 
+    height: 100%; 
+    width: 100%; 
+    left: 0; 
+    top: 0;
+}
+
+ellipse {
+    fill:#045d62;
+    stroke: #94c2b2;
+    
+}
+
+line {
+    stroke:#c5ffebc7;
+}
