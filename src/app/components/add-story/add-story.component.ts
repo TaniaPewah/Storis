@@ -12,4 +12,8 @@ export class AddStoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onCreateStory(){
+    console.log("create story");
+
+  }
 }

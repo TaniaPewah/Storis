@@ -35,6 +35,18 @@ export class StoryService {
       date: new Date(),
       pulse: 100,
       state: 'edit'
+    },
+    {
+      id: 1,
+      title:'first',
+      text:'division by zero is infinity',
+      author:'Taniup',
+      imgSrc:'htfh',
+      choices: [3,4],
+      father: 7,
+      date: new Date(),
+      pulse: 100,
+      state: 'edit'
     }];
    }
 }
