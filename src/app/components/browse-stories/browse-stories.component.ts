@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Story } from '../../models/Story';
+import { StoryService } from '../../services/story.service';
 
 @Component({
   selector: 'app-browse-stories',
@@ -9,9 +10,9 @@ import { Story } from '../../models/Story';
 export class BrowseStoriesComponent implements OnInit {
   stories: Story[];
 
-  constructor() { }
+  constructor(private storyService:StoryService ) { }
 
   ngOnInit(): void {
+    this.stories = this.storyService.getStories();
   }
-
 }

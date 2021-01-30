@@ -1,6 +1,6 @@
 export class Story{
     id: number;
-    author: number;
+    author: string;
     title: string;
     text: string;
     imgSrc: string;
