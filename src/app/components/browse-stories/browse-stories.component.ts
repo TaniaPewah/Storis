@@ -15,4 +15,5 @@ export class BrowseStoriesComponent implements OnInit {
   ngOnInit(): void {
     this.stories = this.storyService.getStories();
   }
+
 }

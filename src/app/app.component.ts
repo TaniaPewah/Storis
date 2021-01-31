@@ -7,9 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title:string = 'angular-todolist Taniup';
+  title:string = 'angular Stories Taniup';
+  public showBrowse:boolean = true;
+  public showCreateStory:boolean = false;
 
   constructor(){
     this.title= 'wat wat';
+  }
+
+  createStoryTellBrowser(){
+    console.log("app-root i heard");
+    this.showBrowse = false;
+    this.showCreateStory = true;
   }
 }

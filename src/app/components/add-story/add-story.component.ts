@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-story',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-story.component.css']
 })
 export class AddStoryComponent implements OnInit {
+  @Output() createStory: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -14,6 +15,6 @@ export class AddStoryComponent implements OnInit {
 
   onCreateStory(){
     console.log("create story");
-
+    this.createStory.emit();
   }
 }
