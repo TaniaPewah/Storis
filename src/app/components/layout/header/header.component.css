@@ -1,15 +1,40 @@
 .header {
-    display: flex;
+    display: grid;
     position: relative;
+    grid-template-areas: "fresh-icon hot-icon h1 search create";
 }
+
+@media (max-width: 768px) {
+    .header {
+        display: grid;
+        position: relative;
+        grid-template-areas: "fresh-icon hot-icon h1"
+                              "search search create";
+    }
+}
+
+app-view-fresh-icon{
+    grid-area: fresh-icon;
+}
+
+app-view-hot-icon{
+    grid-area: hot-icon;
+}
+
+app-add-story{
+    grid-area: create;
+}
+
 h1{
     display: inline-block;
     font-size: 3em;
     margin-left: 20px;
+    grid-area: h1;
 }
 
 .search-container{
     position: relative;
+    grid-area: search;
 }
 input{
     margin: 19% 7% 6% 11%;

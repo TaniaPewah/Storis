@@ -13,6 +13,7 @@ import { ViewHotIconComponent } from './components/view-hot-icon/view-hot-icon.c
 import { AddStoryComponent } from './components/add-story/add-story.component';
 import { BrowseStoriesComponent } from './components/browse-stories/browse-stories.component';
 import { DisplayStoryComponent } from './components/display-story/display-story.component';
+import { EditStoryComponent } from './components/edit-story/edit-story.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DisplayStoryComponent } from './components/display-story/display-story.
     ViewHotIconComponent,
     AddStoryComponent,
     BrowseStoriesComponent,
-    DisplayStoryComponent
+    DisplayStoryComponent,
+    EditStoryComponent
   ],
   imports: [
     BrowserModule,
