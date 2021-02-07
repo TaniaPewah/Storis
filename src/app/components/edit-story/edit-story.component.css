@@ -28,6 +28,10 @@
                              "finish";
     
     }
+
+    label{
+        text-align: left !important;
+    }
 }
 
 

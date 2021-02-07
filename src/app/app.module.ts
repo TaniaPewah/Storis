@@ -14,6 +14,11 @@ import { AddStoryComponent } from './components/add-story/add-story.component';
 import { BrowseStoriesComponent } from './components/browse-stories/browse-stories.component';
 import { DisplayStoryComponent } from './components/display-story/display-story.component';
 import { EditStoryComponent } from './components/edit-story/edit-story.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -27,13 +32,17 @@ import { EditStoryComponent } from './components/edit-story/edit-story.component
     AddStoryComponent,
     BrowseStoriesComponent,
     DisplayStoryComponent,
-    EditStoryComponent
+    EditStoryComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,17 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Story } from '../models/Story';
 import { Observable } from 'rxjs';
+//import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoryService {
 
-  constructor() { }
+  constructor( /*private firestore: AngularFirestore*/ ) { }
 
-  // returns observable
-   getStories(){
-    return [
+  createStory(data){
+    /*return new Promise<any>((resolve, reject) =>{
+      this.firestore
+          .collection("stories")
+          .add(data)
+          .then(res => {}, err => reject(err));
+    });*/
+  }
+
+  getStories() { 
+    //return 
+     //this.firestore.collection("stories").snapshotChanges();
+
+    
+     return [
       {
       id: 2,
       title:'third',
@@ -47,6 +60,7 @@ export class StoryService {
       date: new Date(),
       pulse: 100,
       state: 'edit'
-    }];
-   }
+    }]; 
+  }
+  // returns observable
 }
