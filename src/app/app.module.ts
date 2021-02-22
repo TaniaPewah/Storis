@@ -14,11 +14,12 @@ import { AddStoryComponent } from './components/add-story/add-story.component';
 import { BrowseStoriesComponent } from './components/browse-stories/browse-stories.component';
 import { DisplayStoryComponent } from './components/display-story/display-story.component';
 import { EditStoryComponent } from './components/edit-story/edit-story.component';
-import { SigninComponent } from './components/signin/signin.component';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { environment } from '../environments/environment';
     BrowseStoriesComponent,
     DisplayStoryComponent,
     EditStoryComponent,
-    SigninComponent
+    UserProfileComponent,
+    WelcomePageComponent,
   ],
   imports: [
     BrowserModule,
