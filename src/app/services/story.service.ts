@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Story } from '../models/Story';
 import { Observable } from 'rxjs';
-//import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoryService {
 
-  constructor( /*private firestore: AngularFirestore*/ ) { }
+  constructor( private firestore: AngularFirestore ) { }
 
   createStory(data){
-    /*return new Promise<any>((resolve, reject) =>{
+    return new Promise<any>((resolve, reject) =>{
       this.firestore
           .collection("stories")
           .add(data)
           .then(res => {}, err => reject(err));
-    });*/
+    });
   }
 
   getStories() { 

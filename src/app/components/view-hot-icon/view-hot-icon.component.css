@@ -19,6 +19,10 @@ svg{
     max-height:100%;
 }
 
+.hot-fire:hover{
+    opacity: 70%;
+    cursor:pointer;
+}
 
 #hot-icon #svg_8{
     stroke: rgb(0, 0, 0);

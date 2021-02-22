@@ -20,12 +20,12 @@ background: radial-gradient(circle, rgb(252 255 213) 0%, rgb(176 250 255) 100%);
 }
 
 button#logout{
-    border-radius: 30% 83%;
+    border-radius: 50% 50% 55% 45% / 38% 39% 61% 62%;
     padding: 2% 3% 5% 3%;
     border: none;
-    background: #388584;
+    background: #2abcbb66;
     color: #ebfffe;
-    width: 131px;
+    width: 108px;
     font-size: 19px;
     height: 29px;
 }

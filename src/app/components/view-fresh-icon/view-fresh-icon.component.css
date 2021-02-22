@@ -18,6 +18,11 @@ svg{
     max-height:100%;
 }
 
+.fresh-leaf:hover{
+    opacity: 70%;
+    cursor:pointer;
+}
+
 #fresh-icon #svg_1{
     stroke: rgb(0, 0, 0);
     fill: rgb(133, 198, 105);
@@ -26,7 +31,7 @@ svg{
 
 #fresh-icon #svg_4{
     stroke: rgb(0, 0, 0);
-    fill: rgb(162, 214, 139);
+    fill: rgb(175 219 156);
     fill-opacity: 0.85;
     stroke-width: 0;
 }
