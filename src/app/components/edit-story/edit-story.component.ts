@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-edit-story',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-story.component.css']
 })
 export class EditStoryComponent implements OnInit {
+  @Output() cancelCreateStory: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onCancelCreate(){
+    console.log("cancel create story");
+    this.cancelCreateStory.emit();
+  }
 }

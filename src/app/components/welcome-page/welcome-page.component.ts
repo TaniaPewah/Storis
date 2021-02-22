@@ -17,9 +17,15 @@ export class WelcomePageComponent implements OnInit {
   }
 
   createStoryTellBrowser(){
-    console.log("app-root i heard");
+    console.log("app-root i heard create");
     this.showBrowse = false;
     this.showCreateStory = true;
+  }
+
+  cancelcreateStoryTellBrowser(){
+    console.log("app-root i heard cancel");
+    this.showBrowse = true;
+    this.showCreateStory = false;
   }
 
 }

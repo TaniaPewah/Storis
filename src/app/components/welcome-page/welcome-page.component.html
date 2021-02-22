@@ -29,7 +29,7 @@
         <button id="logout" (click)="auth.signOut()">Logout</button>
     </div>
 
-    <app-header (createStoryPass)="createStoryTellBrowser()" ></app-header>
+    <app-header (createStoryPass)="createStoryTellBrowser()"></app-header>
     <app-browse-stories *ngIf="showBrowse"></app-browse-stories>
-    <app-edit-story *ngIf="showCreateStory" ></app-edit-story>
+    <app-edit-story *ngIf="showCreateStory" (cancelCreateStory)="cancelcreateStoryTellBrowser()"></app-edit-story>
 </ng-template>

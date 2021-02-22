@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   }
 
   createStory(){
-    console.log("app-header i heard");
+    console.log("app-header i heard create");
     this.createStoryPass.emit();
   }
 }
