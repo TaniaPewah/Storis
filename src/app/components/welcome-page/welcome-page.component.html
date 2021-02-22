@@ -1,28 +1,35 @@
 <div *ngIf="auth.user$ | async; then authenticated else guest">
     <!-- template will replace this div -->
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
 </div>
 
 <!-- User NOT logged in -->
+
 <ng-template #guest>
-<h3>Howdy, GUEST</h3>
-<p>Login to get started...</p>
+    <div id="not_loggedin" class="glow" >
+        <h3>Welcome, STORYTELLER</h3>
+        <p>Login to get started...</p>
 
-<button (click)="auth.googleSignin()">
-    <i class="fa fa-google"></i> Connect Google
-</button>
-
+        <button id="login" (click)="auth.googleSignin()">
+            <i class="fa fa-google"></i> Connect Google
+        </button>
+    </div>
 </ng-template>
+
 
 
 <!-- User logged in -->
 <ng-template #authenticated>
-<div *ngIf="auth.user$ | async as user">
-    <h3>Howdy, {{ user.displayName }}</h3>
-    <img  [src]="user.photoURL">
-    <p>UID: {{ user.uid }}</p>
-    <button (click)="auth.signOut()">Logout</button>
-</div>
-<app-header (createStoryPass)="createStoryTellBrowser()" ></app-header>
-<app-browse-stories *ngIf="showBrowse"></app-browse-stories>
-<app-edit-story *ngIf="showCreateStory" ></app-edit-story>
+    <div *ngIf="auth.user$ | async as user">
+        <h3>It is you, {{ user.displayName }}</h3>
+        <img  [src]="user.photoURL">
+        <span id="uid" >UID: {{ user.uid }}</span>
+        <button id="logout" (click)="auth.signOut()">Logout</button>
+    </div>
+
+    <app-header (createStoryPass)="createStoryTellBrowser()" ></app-header>
+    <app-browse-stories *ngIf="showBrowse"></app-browse-stories>
+    <app-edit-story *ngIf="showCreateStory" ></app-edit-story>
 </ng-template>

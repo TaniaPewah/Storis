@@ -2,6 +2,7 @@
     display: grid;
     position: relative;
     grid-template-areas: "fresh-icon hot-icon h1 search create";
+    font-family: 'Rajdhani', sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -27,9 +28,10 @@ app-add-story{
 
 h1{
     display: inline-block;
-    font-size: 3em;
+    font-size: 3.5em;
     margin-left: 20px;
     grid-area: h1;
+    color:azure;
 }
 
 .search-container{
