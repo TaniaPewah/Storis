@@ -13,7 +13,8 @@ export class BrowseStoriesComponent implements OnInit {
   constructor(private storyService:StoryService ) { }
 
   ngOnInit(): void {
-    this.stories = this.storyService.getStories();
+    this.storyService.getStories();
+    debugger;
   }
 
 }

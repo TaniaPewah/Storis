@@ -13,6 +13,7 @@ export class EditStoryComponent implements OnInit {
   constructor(private storyService:StoryService ) { }
 
   ngOnInit(): void {
+    
   }
 
   onCancelCreate(){
@@ -21,13 +22,6 @@ export class EditStoryComponent implements OnInit {
   }
 
   onSubmit( story:Story ){
-    
-     this.storyService.createStory(story)
-         .then(res => {
-           console.log("created story");
-             /*do something here....
-             maybe clear the form or give a success message*/
-         });
-  
+     this.storyService.createStory(story);
   }
 }
