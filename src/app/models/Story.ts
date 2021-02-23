@@ -3,7 +3,7 @@ export class Story{
     author: string;
     title: string;
     text: string;
-    imgSrc: string;
+    image: string;
     choices: Array<number>;
     father: number;
     date: Date;
