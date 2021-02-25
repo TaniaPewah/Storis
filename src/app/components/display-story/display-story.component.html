@@ -1,11 +1,12 @@
 
 
 <div class= 'story-container'>
-
+<button (click)="deleteStory()">X</button>
     <h2> {{ story.title }} </h2>
     <img [src]="story.image"/>
     <h3> {{ story.text }} </h3>
     <span class='author'> By: {{ story.author }}</span>
     <div> {{ story.pulse }} </div>
-    <button>{{ story.choices[0] }}</button> <button>{{ story.choices[1] }}</button>
+    <button> story.choices[0] </button> <button>story.choices[1] </button>
+    <p>{{ message }}</p>
 </div>

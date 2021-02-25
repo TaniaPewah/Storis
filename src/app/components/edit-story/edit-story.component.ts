@@ -10,6 +10,9 @@ import { StoryService } from '../../services/story.service';
 export class EditStoryComponent implements OnInit {
   @Output() cancelCreateStory: EventEmitter<any> = new EventEmitter();
 
+  story: Story = new Story();
+  submitted = false;
+
   constructor(private storyService:StoryService ) { }
 
   ngOnInit(): void {
@@ -21,7 +24,16 @@ export class EditStoryComponent implements OnInit {
     this.cancelCreateStory.emit();
   }
 
-  onSubmit( story:Story ){
-     this.storyService.createStory(story);
+  onSubmit(){
+    debugger;
+    this.storyService.createStory(this.story).then(() => {
+      console.log('Created new item successfully!');
+      this.submitted = true;
+    });
+  }
+
+  newStory(): void {
+    this.submitted = false;
+    this.story = new Story();
   }
 }
