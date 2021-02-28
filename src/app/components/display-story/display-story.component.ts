@@ -11,17 +11,14 @@ export class DisplayStoryComponent implements OnInit {
   @Input() story: Story;
   @Output() refreshList: EventEmitter<any> = new EventEmitter();
   currentStory: Story = null;
-  message ='';
 
   constructor( private storyService:StoryService ) {
    }
 
   ngOnInit(): void {
-    this.message = '';
   }
 
   ngOnChanges(): void {
-    this.message = '';
     this.currentStory = { ...this.story };
   }
 
@@ -29,7 +26,6 @@ export class DisplayStoryComponent implements OnInit {
     this.storyService.deleteStory(this.currentStory.id)
       .then(() => {
         this.refreshList.emit();
-        this.message = 'The story was deleted successfully!';
         console.log('The story was deleted successfully');
       })
       .catch(err => console.log(err));

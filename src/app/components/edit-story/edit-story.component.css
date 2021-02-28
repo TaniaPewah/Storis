@@ -1,6 +1,7 @@
 #edit-sory-container{
     font-family: 'Rajdhani', sans-serif;
     display:grid;
+    width: 90%;
     grid-template-areas: "h2 h2 h2"
                          "h3 h3 h3" 
                          "title-label title title"

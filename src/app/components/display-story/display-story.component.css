@@ -1,14 +1,14 @@
 .story-container{
     display: inline-block;
-    width:25%;
     font-family: 'Rajdhani', sans-serif;
-    border-radius: 30%;
+    border-radius: 5%;
     background: #fff9cd;
     margin: 1%;
     padding: 3%;
     -webkit-box-shadow:0 0 100px #fff7a3;
     -moz-box-shadow: 0 0 100px #fff7a3;
     box-shadow: 0 0 100px #fff7a3;   
+    vertical-align: top;
 }
 
 img{

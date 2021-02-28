@@ -1,8 +1,10 @@
 .header {
     display: grid;
     position: relative;
+    width: 86%;
     grid-template-areas: "fresh-icon hot-icon h1 search create";
     font-family: 'Rajdhani', sans-serif;
+    grid-template-columns: 150px 150px 1fr 1fr;
 }
 
 @media (max-width: 768px) {
@@ -14,16 +16,29 @@
     }
 }
 
+@media (max-width: 512px) {
+    .header {
+        display: grid;
+        position: relative;
+        grid-template-areas: "fresh-icon hot-icon"
+                              "h1"
+                              "search search create";
+    }
+}
+
+
 app-view-fresh-icon{
     grid-area: fresh-icon;
 }
 
 app-view-hot-icon{
     grid-area: hot-icon;
+    width:100px;
 }
 
 app-add-story{
     grid-area: create;
+    cursor: pointer;
 }
 
 h1{

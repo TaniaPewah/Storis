@@ -1,6 +1,4 @@
 <header class="header">
-    <span>{{ user.uid }}</span>
-
     <app-view-fresh-icon></app-view-fresh-icon>
     <app-view-hot-icon></app-view-hot-icon>
     <h1>Storis</h1>
@@ -8,6 +6,6 @@
         <label>Search by author</label>
         <input type="text" name="search" id="search-author">
     </span>
-    <app-add-story  (createStory) = "createStory()"></app-add-story>
+    <app-add-story (createStory) = "createStory()"></app-add-story>
 
 </header>

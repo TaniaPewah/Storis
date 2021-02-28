@@ -1,5 +1,4 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
-import { User } from 'src/app/models/User';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +6,10 @@ import { User } from 'src/app/models/User';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() user: User;
+
   @Output() createStoryPass: EventEmitter<any> = new EventEmitter();
 
   constructor() {
-    debugger;
    }
 
   ngOnInit(): void {

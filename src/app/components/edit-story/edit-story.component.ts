@@ -1,4 +1,5 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input,ElementRef, ViewChild } from '@angular/core';
+import { User } from 'src/app/models/User';
 import { Story } from '../../models/Story';
 import { StoryService } from '../../services/story.service';
 
@@ -8,7 +9,11 @@ import { StoryService } from '../../services/story.service';
   styleUrls: ['./edit-story.component.css']
 })
 export class EditStoryComponent implements OnInit {
+  @Input() user: User;
   @Output() cancelCreateStory: EventEmitter<any> = new EventEmitter();
+  @ViewChild('author') author: ElementRef;
+  // @ViewChild('option1') option1: ElementRef;
+  // @ViewChild('option2') option2: ElementRef;
 
   story: Story = new Story();
   submitted = false;
@@ -16,6 +21,7 @@ export class EditStoryComponent implements OnInit {
   constructor(private storyService:StoryService ) { }
 
   ngOnInit(): void {
+    this.story.choices = new Array(2);
     
   }
 
@@ -25,7 +31,12 @@ export class EditStoryComponent implements OnInit {
   }
 
   onSubmit(){
-    debugger;
+  
+    this.story.author = this.author.nativeElement.innerHTML;
+    this.story.image = "http://cdn.akc.org/content/article-body-image/siberian_husky_cute_puppies.jpg";
+    this.story.date = new Date();
+    //this.story.choices = ["1","2"];
+    
     this.storyService.createStory(this.story).then(() => {
       console.log('Created new item successfully!');
       this.submitted = true;

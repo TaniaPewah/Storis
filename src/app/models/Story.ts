@@ -4,7 +4,7 @@ export class Story{
     title: string;
     text: string;
     image: string;
-    choices: Array<number>;
+    choices: Array<string>;
     father: number;
     date: Date;
     pulse: number;

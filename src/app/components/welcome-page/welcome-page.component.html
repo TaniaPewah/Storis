@@ -18,8 +18,6 @@
     </div>
 </ng-template>
 
-
-
 <!-- User logged in -->
 <ng-template #authenticated>
     <div *ngIf="auth.user$ | async as user">
@@ -27,9 +25,10 @@
         <img  [src]="user.photoURL">
         <span id="uid" >UID: {{ user.uid }}</span>
         <button id="logout" (click)="auth.signOut()">Logout</button>
-    </div>
+    
 
-    <app-header  *ngIf="auth.user$ | async as user" [user]="user" (createStoryPass)="createStoryTellBrowser()"></app-header>
+    <app-header (createStoryPass)="createStoryTellBrowser()"></app-header>
     <app-browse-stories *ngIf="showBrowse"></app-browse-stories>
-    <app-edit-story *ngIf="showCreateStory" (cancelCreateStory)="cancelcreateStoryTellBrowser()"></app-edit-story>
+    <app-edit-story *ngIf="showCreateStory" [user]="user" (cancelCreateStory)="cancelcreateStoryTellBrowser()"></app-edit-story>
+</div>
 </ng-template>
