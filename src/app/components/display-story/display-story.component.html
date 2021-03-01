@@ -6,8 +6,20 @@
     <h3> {{ story.text }} </h3> 
     <div> {{ story.pulse }} </div>
 
-    <button *ngIf="story.choice_one; else elseBlock1">{{story.choice_one}}</button>
-    <ng-template #elseBlock1><button>option1</button></ng-template>
-    <button *ngIf="story.choice_two; else elseBlock2"> {{story.choice_two}}</button>
-    <ng-template #elseBlock2><button>option2</button></ng-template>
+    <a *ngIf="story.choice_one; else elseBlock1" href="#popup-continue-option"> {{story.choice_one}}</a>
+    <ng-template #elseBlock1><a href="#popup-continue-option"> option1</a></ng-template>
+
+    <a *ngIf="story.choice_two; else elseBlock2" href="#popup-continue-option"> {{story.choice_two}}</a>
+    <ng-template #elseBlock2><a href="#popup-continue-option"> option2</a></ng-template>
+
+    <div id="popup-continue-option" class="overlay">
+        <div class="popup-continue-option">
+            <h2>This choice is open for submission</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                Would you like to continue this story by {{this.currentStory.author}}?
+                <button (click)="makeChoice($event.target)">continue</button>
+            </div>
+        </div>
+    </div>
 </div>

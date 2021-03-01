@@ -2,13 +2,12 @@
     font-family: 'Rajdhani', sans-serif;
     display:grid;
     width: 90%;
-    grid-template-areas: "h2 h2 h2"
+    grid-template-areas: "h2 h2 finish"
                          "h3 h3 h3" 
                          "title-label title title"
                          "img-label img-input img-input"
                          "contentlbl content-input content-input"
-                         "options-label option1 option2"
-                         "finish finish finish";
+                         "options-label option1 option2";
 
 }
 
@@ -16,6 +15,7 @@
     #edit-sory-container{
         display:grid;
         grid-template-areas: "h2"
+                             "finish"
                              "h3" 
                              "title-label"
                              "title"
@@ -25,14 +25,18 @@
                              "content-input"
                              "options-label" 
                              "option1"
-                             "option2"
-                             "finish";
+                             "option2";
+                            
     
     }
 
     label{
         text-align: left !important;
     }
+}
+
+#edit-sory-container > * {
+    margin-top: 10px;
 }
 
 

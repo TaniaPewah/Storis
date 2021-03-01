@@ -9,7 +9,7 @@ import { StoryService } from '../../services/story.service';
 })
 export class DisplayStoryComponent implements OnInit {
   @Input() story: Story;
-  @Output() refreshList: EventEmitter<any> = new EventEmitter();
+  @Output() chooseStoryOption: EventEmitter<any> = new EventEmitter();
   currentStory: Story = null;
 
   constructor( private storyService:StoryService ) {
@@ -20,6 +20,10 @@ export class DisplayStoryComponent implements OnInit {
 
   ngOnChanges(): void {
     this.currentStory = { ...this.story };
+  }
+
+  makeChoice(target): void{
+    this.chooseStoryOption.emit();
   }
 
   // deleteStory(): void {

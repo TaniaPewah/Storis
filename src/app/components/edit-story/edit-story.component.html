@@ -1,5 +1,6 @@
 <div id="edit-sory-container">
-    <h2> Add your story </h2>
+    <h2> Add your story </h2> 
+    <input id="finish" type="button" value="Cancel" (click) = "onCancelCreate()">
     <h3> It will be saved to your bookmarks </h3>
 
     <label class="title">Add title</label>
@@ -31,7 +32,7 @@
         [(ngModel)]="story.choice_two"
         >
 
-    <input id="finish" type="button" value="Cancel" (click) = "onCancelCreate()">
+  
     <input id="add" type="button" value="Submit" (click) = "onSubmit()">
 
     <div *ngIf="submitted">
