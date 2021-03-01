@@ -12,17 +12,15 @@ export class EditStoryComponent implements OnInit {
   @Input() user: User;
   @Output() cancelCreateStory: EventEmitter<any> = new EventEmitter();
   @ViewChild('author') author: ElementRef;
-  // @ViewChild('option1') option1: ElementRef;
-  // @ViewChild('option2') option2: ElementRef;
+
 
   story: Story = new Story();
   submitted = false;
+  imageToUpload: File = null;
 
   constructor(private storyService:StoryService ) { }
 
-  ngOnInit(): void {
-    this.story.choices = new Array(2);
-    
+  ngOnInit(): void {    
   }
 
   onCancelCreate(){
@@ -33,9 +31,10 @@ export class EditStoryComponent implements OnInit {
   onSubmit(){
   
     this.story.author = this.author.nativeElement.innerHTML;
-    this.story.image = "http://cdn.akc.org/content/article-body-image/siberian_husky_cute_puppies.jpg";
+
     this.story.date = new Date();
-    //this.story.choices = ["1","2"];
+    //this.story.image = this.imageToUpload;
+    this.story.image = "http://cdn.akc.org/content/article-body-image/siberian_husky_cute_puppies.jpg";
     
     this.storyService.createStory(this.story).then(() => {
       console.log('Created new item successfully!');
@@ -46,5 +45,13 @@ export class EditStoryComponent implements OnInit {
   newStory(): void {
     this.submitted = false;
     this.story = new Story();
+  }
+
+  handleImageFileInput(files: FileList){
+    //this.imageToUpload = files.item(0);
+    //this.imageToUpload = files.item(0).map((obj)=> {return Object.assign({}, obj)});
+    console.log("hhh");
+    debugger;
+
   }
 }

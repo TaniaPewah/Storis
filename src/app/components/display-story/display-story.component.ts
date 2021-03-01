@@ -22,13 +22,13 @@ export class DisplayStoryComponent implements OnInit {
     this.currentStory = { ...this.story };
   }
 
-  deleteStory(): void {
-    this.storyService.deleteStory(this.currentStory.id)
-      .then(() => {
-        this.refreshList.emit();
-        console.log('The story was deleted successfully');
-      })
-      .catch(err => console.log(err));
-  }
+  // deleteStory(): void {
+  //   this.storyService.deleteStory(this.currentStory.id)
+  //     .then(() => {
+  //       this.refreshList.emit();
+  //       console.log('The story was deleted successfully');
+  //     })
+  //     .catch(err => console.log(err));
+  // }
 
 }

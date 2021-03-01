@@ -5,5 +5,9 @@
     <img [src]="story.image"/>
     <h3> {{ story.text }} </h3> 
     <div> {{ story.pulse }} </div>
-    <button> story.choices[0] </button> <button>  story.choices[1]  </button>
+
+    <button *ngIf="story.choice_one; else elseBlock1">{{story.choice_one}}</button>
+    <ng-template #elseBlock1><button>option1</button></ng-template>
+    <button *ngIf="story.choice_two; else elseBlock2"> {{story.choice_two}}</button>
+    <ng-template #elseBlock2><button>option2</button></ng-template>
 </div>
