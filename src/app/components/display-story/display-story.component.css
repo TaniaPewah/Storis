@@ -65,3 +65,31 @@ img{
     overflow: auto;
   }
 
+.choice-btn {
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+    background: linear-gradient(to bottom, #fff9cd 5%, #fff9cd 100%);
+    background-color: #eae0c2;
+    border-radius: 8px;
+    border: 2px solid #1e474252;
+    display: inline-block;
+    cursor: pointer;
+    color: #505739;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 13px;
+    margin-right: 10px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+}
+.choice-btn:hover {
+	background:linear-gradient(to bottom,#9edfc3 5%, #f8ffe4 100%);
+	background-color:#9edfc3;
+}
+.choice-btn:active {
+	position:relative;
+	top:1px;
+}
+
+     
+

@@ -6,11 +6,11 @@
     <h3> {{ story.text }} </h3> 
     <div> {{ story.pulse }} </div>
 
-    <a *ngIf="story.choice_one; else elseBlock1" href="#popup-continue-option"> {{story.choice_one}}</a>
-    <ng-template #elseBlock1><a href="#popup-continue-option"> option1</a></ng-template>
+    <a *ngIf="story.choice_one; else elseBlock1" href="#popup-continue-option" class="choice-btn"> {{story.choice_one}}</a>
+    <ng-template #elseBlock1><a href="#popup-continue-option" class="choice-btn"> option1</a></ng-template>
 
-    <a *ngIf="story.choice_two; else elseBlock2" href="#popup-continue-option"> {{story.choice_two}}</a>
-    <ng-template #elseBlock2><a href="#popup-continue-option"> option2</a></ng-template>
+    <a *ngIf="story.choice_two; else elseBlock2" href="#popup-continue-option" class="choice-btn"> {{story.choice_two}}</a>
+    <ng-template #elseBlock2><a href="#popup-continue-option" class="choice-btn"> option2</a></ng-template>
 
     <div id="popup-continue-option" class="overlay">
         <div class="popup-continue-option">
