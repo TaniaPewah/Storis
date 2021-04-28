@@ -1,0 +1,28 @@
+*{
+    cursor: pointer;
+    color: white;
+    font-family: -webkit-pictograph;
+    transform: translate(-50%, -50%);
+}
+
+h1{
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    font-size: 42px;
+}
+
+#left-initial-choice{
+    position: fixed;
+    top: 50%;
+    left: 30%;
+    font-size: 40px;
+}
+
+#right-initial-choice{
+    position: fixed;
+    top: 50%;
+    left: 70%;
+    font-size: 40px;
+}
+
