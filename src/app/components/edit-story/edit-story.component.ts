@@ -13,7 +13,6 @@ export class EditStoryComponent implements OnInit {
   @Output() cancelCreateStory: EventEmitter<any> = new EventEmitter();
   @ViewChild('author') author: ElementRef;
 
-
   story: Story = new Story();
   submitted = false;
   imageToUpload: File = null;
@@ -34,8 +33,8 @@ export class EditStoryComponent implements OnInit {
 
     this.story.date = new Date();
     //this.story.image = this.imageToUpload;
-    this.story.image = "http://cdn.akc.org/content/article-body-image/siberian_husky_cute_puppies.jpg";
-    
+    //this.story.image = "http://cdn.akc.org/content/article-body-image/siberian_husky_cute_puppies.jpg";
+    this.storyService.uploadImage(this.imageToUpload, this.story.id);
     this.storyService.createStory(this.story).then(() => {
       console.log('Created new item successfully!');
       this.submitted = true;
@@ -47,11 +46,9 @@ export class EditStoryComponent implements OnInit {
     this.story = new Story();
   }
 
-  handleImageFileInput(files: FileList){
-    //this.imageToUpload = files.item(0);
-    //this.imageToUpload = files.item(0).map((obj)=> {return Object.assign({}, obj)});
+  handleImageFileInput( event ){
+    this.imageToUpload = event.target.files[0];
     console.log("hhh");
     debugger;
-
   }
 }

@@ -8,12 +8,12 @@
         required
         [(ngModel)]="story.title">
 
-    <label #author>{{user.displayName}}</label>
+    <label #author>user.displayName</label>
 
    
     <label class="image">Upload an image</label>
-    <input class="image" accept="image/*" type="file" src="" alt=""
-        required (change)="handleImageFileInput($event.target.files)"
+    <input class="image" accept="image/*" type="file"
+        required (change)="handleImageFileInput($event)"
         [(ngModel)]="story.image">
 
   
