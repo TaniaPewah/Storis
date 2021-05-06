@@ -32,11 +32,10 @@ export class EditStoryComponent implements OnInit {
     this.story.author = this.author.nativeElement.innerHTML;
 
     this.story.date = new Date();
-    //this.story.image = this.imageToUpload;
-    //this.story.image = "http://cdn.akc.org/content/article-body-image/siberian_husky_cute_puppies.jpg";
-    this.storyService.uploadImage(this.imageToUpload, this.story.id);
-    this.storyService.createStory(this.story).then(() => {
+    this.storyService.createStory(this.story).then((res) => {
       console.log('Created new item successfully!');
+      debugger;
+      this.storyService.uploadImage(this.imageToUpload, res.id);
       this.submitted = true;
     });
   }
