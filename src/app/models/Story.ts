@@ -3,11 +3,11 @@ export class Story{
     author: string;
     title: string;
     text: string;
-    image: File;
     choice_one: string;
     choice_two: string;
     father: number;
     date: Date;
     pulse: number;
     state: string;
+    imageURL: string;
 }
