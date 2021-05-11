@@ -32,12 +32,7 @@ export class EditStoryComponent implements OnInit {
     this.story.author = this.author.nativeElement.innerHTML;
 
     this.story.date = new Date();
-    this.storyService.createStory(this.story).then((res) => {
-      console.log('Created new item successfully!');
-      debugger;
-      this.storyService.uploadImage(this.imageToUpload, res.id);
-      this.submitted = true;
-    });
+    this.storyService.createStory(this.story, this.imageToUpload);
   }
 
   newStory(): void {
