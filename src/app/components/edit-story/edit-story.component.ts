@@ -32,7 +32,7 @@ export class EditStoryComponent implements OnInit {
     this.story.author = this.author.nativeElement.innerHTML;
 
     this.story.date = new Date();
-    this.storyService.createStory(this.story, this.imageToUpload);
+    this.storyService.saveStory(this.story, this.imageToUpload);
   }
 
   newStory(): void {
@@ -42,7 +42,5 @@ export class EditStoryComponent implements OnInit {
 
   handleImageFileInput( event ){
     this.imageToUpload = event.target.files[0];
-    console.log("hhh");
-    debugger;
   }
 }

@@ -22,12 +22,14 @@ export class StoryService {
     this.storiessRef = firestore.collection(this.dbPath);
   }
 
-  createStory(story: Story, image: File ): any {
-    this.story = story;
+  saveStory(story: Story, image: File ): any {
+    this.uploadImage( image, story ); 
+  }
+
+  createStorywithImageURL( story:Story ){
     this.storiessRef.add({ ...story }).then((res) => {
       console.log('Created new item successfully!');
-
-      this.uploadImage(image, res.id); 
+      console.log('story id: ' + res.id);
     });
   }
 
@@ -43,12 +45,12 @@ export class StoryService {
     return this.storiessRef;
   }
 
-  uploadImage(image, id){
+  uploadImage(image, story){
 
     const n = Date.now();
     const imagePath = `${this.imageStoragePath}/${n}`;
     const fileRef = this.storage.ref( imagePath );
-    const task = this.storage.upload( imagePath, image,{ customMetadata: { storyID: id} } );
+    const task = this.storage.upload( imagePath, image );
 
     //get notified when the download URL is available
     task.snapshotChanges()
@@ -57,11 +59,10 @@ export class StoryService {
         this.imageDownloadURL = fileRef.getDownloadURL();
         this.imageDownloadURL.subscribe(url => {
           if (url) {
-            this.imageUrl = url;
-            this.story.imageURL = url;
-            //this.updateStoryImageUrl(id, this.story);
+            story.imageURL = url;
+            this.createStorywithImageURL( story );
           }
-          console.log(this.imageUrl);
+          console.log(story.imageURL);
         });
       })
     ).subscribe();
