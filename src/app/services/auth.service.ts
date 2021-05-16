@@ -28,6 +28,7 @@ export class AuthService {
         switchMap(user => {
             // Logged in
           if (user) {
+            this.router.navigate(['browse']);
             return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
           } else {
             // Logged out
@@ -59,8 +60,8 @@ export class AuthService {
 
   }
 
-  async signOut() {
-    await this.afAuth.signOut();
+  logout() {
+    this.afAuth.signOut();
     this.router.navigate(['/']);
   }
 

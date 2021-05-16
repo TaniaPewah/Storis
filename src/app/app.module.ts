@@ -19,6 +19,7 @@ import { WelcomePageComponent } from './components/welcome-page/welcome-page.com
 import { InitialChoiceComponent } from './components/initial-choice/initial-choice.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from 'src/routes';
+import { UserSpaceComponent } from './components/user-space/user-space.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { appRoutes } from 'src/routes';
     UserProfileComponent,
     WelcomePageComponent,
     InitialChoiceComponent,
+    UserSpaceComponent,
   ],
   imports: [
     BrowserModule,

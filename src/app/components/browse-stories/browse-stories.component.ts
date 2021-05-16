@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Story } from '../../models/Story';
 import { StoryService } from '../../services/story.service';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-browse-stories',
@@ -10,8 +12,21 @@ import { map } from 'rxjs/operators';
 })
 export class BrowseStoriesComponent implements OnInit {
   stories: Story[];
+  user : any = {};
 
-  constructor(private storyService:StoryService ) { }
+  constructor(private storyService:StoryService,
+              private afAuth: AngularFireAuth,
+              private router: Router ) { 
+ 
+      this.stories = [];
+      this.afAuth.onAuthStateChanged(auth => {
+        if (auth !== undefined && auth !== null) {
+          this.user = auth;
+        } else {
+          this.router.navigate(['login']);
+        }
+      });
+  }
 
   ngOnInit(): void {
     this.retrieveStories();

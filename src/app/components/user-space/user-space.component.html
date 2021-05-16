@@ -1,0 +1,12 @@
+<p>user-space works!</p>
+
+<div id="user-space-wrapper">
+
+    <h3>It is you, {{ user.displayName }}</h3>
+    <img  [src]="user.photoURL">
+    <span id="uid" >UID: {{ user.uid }}</span>
+    <button id="logout" (click)="logout()">Logout</button>
+
+<app-header></app-header>
+
+</div>

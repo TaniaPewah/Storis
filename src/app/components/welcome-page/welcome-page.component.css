@@ -1,17 +1,24 @@
 #not_loggedin{
     background: rgb(124,59,101);
-background: radial-gradient(circle, rgb(252 255 213) 0%, rgb(176 250 255) 100%);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background: radial-gradient(circle, rgb(252 255 213) 0%, rgb(176 250 255) 100%);
     width: 300px;
     text-align: center;
-    padding: 6% 5% 8% 3%;
+    padding: 6%;
     position: absolute;
-    top: 29%;
+    top: 43%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 1.5em;
-   }
+    font-family: 'Rajdhani', sans-serif; 
+}
+
+#not_loggedin h3{
+    font-size: 3em;
+    font-weight: bold;
+}
+
+#not_loggedin p{
+    font-size: 2em;
+}
 
 .glow{
     -webkit-box-shadow:0 0 100px #fff694;
@@ -31,13 +38,15 @@ button#logout{
 }
 
 button#login{
+    cursor: pointer;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    width: 40%;
-    height: 40px;
+    width: 48%;
+    height: 66px;
     padding: 2% 3% 5% 3%;
     border: none;
     background: #388584;
     color: #ebfffe;
+    font-size: 1em;
 }
 
 button:hover{
