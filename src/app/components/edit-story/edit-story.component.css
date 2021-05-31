@@ -1,13 +1,15 @@
 #edit-sory-container{
     font-family: 'Rajdhani', sans-serif;
     display:grid;
+    font-size: 1.5em;
     width: 90%;
     grid-template-areas: "h2 h2 finish"
                          "h3 h3 h3" 
                          "title-label title title"
                          "img-label img-input img-input"
                          "contentlbl content-input content-input"
-                         "options-label option1 option2";
+                         "options-label option1 option2"
+                         "empty submit submit";
 
 }
 
@@ -25,7 +27,8 @@
                              "content-input"
                              "options-label" 
                              "option1"
-                             "option2";
+                             "option2"
+                             "submit";
                             
     
     }
@@ -39,6 +42,13 @@
     margin-top: 10px;
 }
 
+textarea{
+    font-size: 1em;
+}
+
+input{
+    font-size: 1em;
+}
 
 h2{
     grid-area: h2;
@@ -91,6 +101,12 @@ label.options{
 
 #finish{
     grid-area: finish;
+}
+
+#submit{
+    grid-area: submit;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 grid-area{

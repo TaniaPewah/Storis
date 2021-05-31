@@ -3,14 +3,12 @@
     <input id="finish" type="button" value="Cancel" (click) = "onCancelCreate()">
     <h3> It will be saved to your bookmarks </h3>
 
-    <label class="title">Add title</label>
+    <label class="title">Add a title</label>
     <input type="text" name="title" class="title"
         required
         [(ngModel)]="story.title">
 
-    <label #author>user.displayName</label>
 
-   
     <label class="image">Upload an image</label>
     <input class="image" accept="image/*" type="file"
         required (change)="handleImageFileInput($event)">
@@ -32,11 +30,10 @@
         >
 
   
-    <input id="add" type="button" value="Submit" (click) = "onSubmit()">
+    <input id="submit" type="button" value="Submit" (click) = "onSubmit()">
 
     <div *ngIf="submitted">
         <h4>You submitted successfully!</h4>
-        <button class="btn btn-success" (click)="newStory()">Add</button>
     </div>
 
 </div>

@@ -9,7 +9,7 @@
 
 <ng-template #guest>
     <div id="not_loggedin" class="glow" >
-        <h3>Welcome, STORYTELLER</h3>
+        <h3>Welcome, TRAVELER</h3>
         <p>Login to get started...</p>
 
         <button id="login" (click)="auth.googleSignin()">
@@ -20,15 +20,5 @@
 
 <!-- User logged in -->
 <ng-template #authenticated>
-    <div *ngIf="auth.user$ | async as user">
-        <h3>It is you, {{ user.displayName }}</h3>
-        <img  [src]="user.photoURL">
-        <span id="uid" >UID: {{ user.uid }}</span>
-        <button id="logout" (click)="auth.signOut()">Logout</button>
-    
-
-    <app-header (createStoryPass)="createStoryTellBrowser()"></app-header>
     <app-browse-stories *ngIf="showBrowse"></app-browse-stories>
-    <app-edit-story *ngIf="showCreateStory" [user]="user" (cancelCreateStory)="cancelcreateStoryTellBrowser()"></app-edit-story>
-</div>
 </ng-template>
