@@ -42,12 +42,12 @@ export class EditStoryComponent implements OnInit {
 
   onCancelCreate(){
     console.log("cancel create story");
-    this.cancelCreateStory.emit();
+    this.router.navigate(['/browse']);
   }
 
   onSubmit(){
   
-    this.story.author = this.author.nativeElement.innerHTML;
+    this.story.author = this.user.displayName;
     this.story.date = new Date();
     this.storyService.saveStory(this.story, this.imageToUpload);
     this.router.navigate(['/browse']);

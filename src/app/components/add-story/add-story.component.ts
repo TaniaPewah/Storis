@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-story',
@@ -8,13 +9,13 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class AddStoryComponent implements OnInit {
   @Output() createStory: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit(): void {
   }
 
   onCreateStory(){
     console.log("create story");
-    this.createStory.emit();
+    this.router.navigate(['/create']);
   }
 }
