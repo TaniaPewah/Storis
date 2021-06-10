@@ -30,6 +30,8 @@ export class StoryService {
     this.storiessRef.add({ ...story }).then((res) => {
       console.log('Created new item successfully!');
       console.log('story id: ' + res.id);
+    }).catch((error)=> {
+      console.log("Problem in createStorywithImageURL->" + error);
     });
   }
 
