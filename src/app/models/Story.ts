@@ -8,7 +8,7 @@ export class Story{
     image: string;
     choice_one: any;
     choice_two: any;
-    father: number;
+    parent: string;
     date: Date;
     pulse: number;
     state: string;

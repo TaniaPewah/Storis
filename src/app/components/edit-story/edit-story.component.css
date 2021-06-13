@@ -1,42 +1,9 @@
-#edit-sory-container{
-    font-family: 'Rajdhani', sans-serif;
-    display:grid;
-    font-size: 1.5em;
-    width: 90%;
-    grid-template-areas: "h2 h2 finish"
-                         "h3 h3 h3" 
-                         "title-label title title"
-                         "img-label img-input img-input"
-                         "contentlbl content-input content-input"
-                         "options-label option1 option2"
-                         "empty submit submit";
 
+
+label{
+    text-align: left !important;
 }
 
-@media (max-width: 768px) {
-    #edit-sory-container{
-        display:grid;
-        grid-template-areas: "h2"
-                             "finish"
-                             "h3" 
-                             "title-label"
-                             "title"
-                             "img-label" 
-                             "img-input"
-                             "contentlbl" 
-                             "content-input"
-                             "options-label" 
-                             "option1"
-                             "option2"
-                             "submit";
-                            
-    
-    }
-
-    label{
-        text-align: left !important;
-    }
-}
 
 #edit-sory-container > * {
     margin-top: 10px;
@@ -50,61 +17,13 @@ input{
     font-size: 1em;
 }
 
-h2{
-    grid-area: h2;
-}
-
-h3{
-    grid-area: h3;
-}
 
 label{
     text-align: right;
     padding-right: 30px;
 }
 
-label.title {
-    grid-area: title-label;
-}
-
-input.title{
-    grid-area: title;
-}
-
-label.image{
-    grid-area: img-label;
-}
-
-input.image{
-    grid-area: img-input;    
-}
-
-label.content{
-    grid-area: contentlbl;
-}
-
-textarea.content{
-    grid-area: content-input;    
-}
-
-label.options{
-    grid-area: options-label;
-}
-
-#option1{
-    grid-area: option1;    
-}
-
-#option2{
-    grid-area: option2;    
-}
-
-#finish{
-    grid-area: finish;
-}
-
 #submit{
-    grid-area: submit;
     padding-top: 15px;
     padding-bottom: 15px;
 }

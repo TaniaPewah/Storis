@@ -14,8 +14,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class EditStoryComponent implements OnInit {
 
+  @Input() parent : Story;
+  @Input() choice : string;
   @Output() cancelCreateStory: EventEmitter<any> = new EventEmitter();
-  @ViewChild('author') author: ElementRef;
 
   user: User = new User();
   story: Story = new Story();
@@ -32,12 +33,12 @@ export class EditStoryComponent implements OnInit {
         console.log("user logged in");
       } else {
         console.log("user not logged in");
-        debugger;
       }
     });
   }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
+    this.story.title = this.choice;    
   }
 
   onCancelCreate(){
@@ -46,11 +47,11 @@ export class EditStoryComponent implements OnInit {
   }
 
   onSubmit(){
-  
-    this.story.author = this.user.displayName;
+
     this.story.date = new Date();
+    this.story.parent = this.parent.id;
+    this.story.author = this.user.displayName;  
     this.storyService.saveStory(this.story, this.imageToUpload);
-    this.router.navigate(['/browse']);
   }
 
   handleImageFileInput( event ){

@@ -1,8 +1,8 @@
 
 
 <div class= 'story-container'>
-    <h2> {{ story.title }} </h2> <span class='author'> By: {{ story.author }}</span>
     <div *ngIf="!editing; else displayEditMode" >
+        <h2> {{ story.title }} </h2> <span class='author'> By: {{ story.author }}</span>
         <img [src]="story.imageURL|| story.image"/>
         <h3> {{ story.text }} </h3> 
         <div> {{ story.pulse }} </div>
@@ -12,35 +12,9 @@
         <a (click)="makeChoice($event.target)" class="choice-btn two"> {{story.choice_two}}</a>
     </div>
 
-
-
     
     <ng-template #displayEditMode>
-        <div>This choice is open for submission</div>
-        <div>
-            <label class="image">Upload an image</label>
-            <input class="image" accept="image/*" type="file"
-                required (change)="handleImageFileInput($event)">
-        </div>
-
-
-        <label class="content"> Content goes here</label>
-        <textarea class="content" name="paragraph_text" cols="50" rows="10"
-        required
-        [(ngModel)]="story.text"></textarea>
-
-
-        <div>
-        <label class="options">And then- either one of those options could happen</label>
-        <input type="text" name="option1" id="option1" required  
-            [(ngModel)]="story.choice_one"
-        >
-        <input type="text" name="option2" id="option2" required
-            [(ngModel)]="story.choice_two"
-        > 
-        </div>
-
-        <input id="submit" type="button" value="Add" (click) = "onSubmit()">
+        <app-edit-story [parent]="story" [choice]="chosenChoice"></app-edit-story>
     </ng-template>
 
 </div>

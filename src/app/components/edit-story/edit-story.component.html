@@ -1,39 +1,30 @@
 <div id="edit-sory-container">
-    <h2> Add your story </h2> 
-    <input id="finish" type="button" value="Return" (click) = "onCancelCreate()">
-    <h3> It will be saved to your bookmarks </h3>
+    <div>This choice is open for submission</div>
+    <h2> {{ story.title }} </h2>
+    <label>by: {{user.displayName}}</label>
+        <div>
+            <label class="image">Upload an image</label>
+            <input class="image" accept="image/*" type="file"
+                required (change)="handleImageFileInput($event)">
+        </div>
 
-    <label class="title">Add a title</label>
-    <input type="text" name="title" class="title"
-        required
-        [(ngModel)]="story.title">
 
-
-    <label class="image">Upload an image</label>
-    <input class="image" accept="image/*" type="file"
-        required (change)="handleImageFileInput($event)">
-
-  
-    <label class="content"> Content goes here</label>
-    <textarea class="content" name="paragraph_text" cols="50" rows="10"
+        <label class="content"> Content goes here</label>
+        <textarea class="content" name="paragraph_text" cols="50" rows="10"
         required
         [(ngModel)]="story.text"></textarea>
 
-    <label class="options">And then- either one of those options could happen</label>
-    <input type="text" name="option1" id="option1"
-        required  
-        [(ngModel)]="story.choice_one"
-        >
-    <input type="text" name="option2" id="option2"
-        required
-        [(ngModel)]="story.choice_two"
-        >
 
-  
-    <input id="submit" type="button" value="Add" (click) = "onSubmit()">
+        <div>
+        <label class="options">And then- either one of those options could happen</label>
+        <input type="text" name="option1" id="option1" required  
+            [(ngModel)]="story.choice_one"
+        >
+        <input type="text" name="option2" id="option2" required
+            [(ngModel)]="story.choice_two"
+        > 
+        </div>
 
-    <div *ngIf="submitted">
-        <h4>You submitted successfully!</h4>
-    </div>
+        <input id="submit" type="button" value="Add" (click) = "onSubmit()">
 
 </div>
