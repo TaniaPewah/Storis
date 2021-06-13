@@ -7,9 +7,9 @@
         <h3> {{ story.text }} </h3> 
         <div> {{ story.pulse }} </div>
     
-        <a (click)="makeChoice($event.target)" class="choice-btn one"> {{story.choice_one}}</a>
+        <a (click)="makeChoice($event.target)" class="choice-btn one"> {{story.choice_one.title || story.choice_one}}</a>
        
-        <a (click)="makeChoice($event.target)" class="choice-btn two"> {{story.choice_two}}</a>
+        <a (click)="makeChoice($event.target)" class="choice-btn two"> {{story.choice_two.title || story.choice_two}}</a>
     </div>
 
     

@@ -38,7 +38,9 @@ export class EditStoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.story.title = this.choice;    
+    this.story.title = this.choice;
+    this.story.choice_one = new Story();
+    this.story.choice_two = new Story();    
   }
 
   onCancelCreate(){
@@ -48,9 +50,10 @@ export class EditStoryComponent implements OnInit {
 
   onSubmit(){
 
+    
     this.story.date = new Date();
     this.story.parent = this.parent.id;
-    this.story.author = this.user.displayName;  
+    this.story.author = this.user.displayName;
     this.storyService.saveStory(this.story, this.imageToUpload);
   }
 

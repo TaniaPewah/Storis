@@ -31,7 +31,7 @@ export class DisplayStoryComponent implements OnInit {
     // if chosen option has content:
     //   display the content on the same component
     // else open edit mode on the same component
-    if( this.story.choice_one.content ){
+    if( this.story.choice_one.text ){
       this.displayNextOutcome();
     } else {
       this.openEditChoiceMode();
@@ -39,6 +39,8 @@ export class DisplayStoryComponent implements OnInit {
   }
 
   displayNextOutcome(){
+
+    console.log("there is a story submitted for this choice");
     // TODO: sliding effect of the prev story, 
     // display the chosen choice.content on the same component
   }
