@@ -39,8 +39,8 @@ export class EditStoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.story.title = this.choice;
-    this.story.choice_one = new Story();
-    this.story.choice_two = new Story();    
+    this.story.choice_one = { text: '', id: null};
+    this.story.choice_two = { text: '', id: null};    
   }
 
   onCancelCreate(){
@@ -59,5 +59,7 @@ export class EditStoryComponent implements OnInit {
 
   handleImageFileInput( event ){
     this.imageToUpload = event.target.files[0];
-  }
+  } 
+
+  
 }

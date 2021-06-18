@@ -6,8 +6,10 @@ export class Story{
     title: string;
     text: string;
     image: string;
-    choice_one: Story;
-    choice_two: Story;
+    choice_one: { text: string,
+                    id: string};
+    choice_two: { text: string,
+                    id: string};
     parent: string;
     date: Date;
     pulse: number;

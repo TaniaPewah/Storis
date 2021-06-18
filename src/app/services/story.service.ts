@@ -12,6 +12,8 @@ export class StoryService {
   private dbPath = '/stories';
   storiessRef: AngularFirestoreCollection<Story> = null;
   story: Story;
+  isImageReady: boolean = false;
+  areChoicesIdsReady: number = 0;
 
   imageStoragePath = '/images';
   imageDownloadURL: Observable<string>;
@@ -23,11 +25,17 @@ export class StoryService {
   }
 
   saveStory(story: Story, image: File ): any {
+    this.story = story;
     this.uploadImage( image, story ); 
+    this.createOpenEndings(story.choice_one, story.choice_two);
   }
 
-  createStorywithImageURL( story:Story ){
-    this.storiessRef.add({ ...story }).then((res) => {
+  createStorywithImageURLandChoicesIds(  ){
+
+    this.isImageReady = false;
+    this.areChoicesIdsReady = 0;
+    
+    this.storiessRef.add({ ...this.story }).then((res) => {
       console.log('Created new item successfully!');
       console.log('story id: ' + res.id);
     }).catch((error)=> {
@@ -39,13 +47,6 @@ export class StoryService {
     return this.storiessRef.doc(id).set(story);
   }
 
-  deleteStory(id: string): Promise<void> {
-    return this.storiessRef.doc(id).delete();
-  }
-
-  getStories() { 
-    return this.storiessRef;
-  }
 
   uploadImage(image, story){
 
@@ -61,12 +62,59 @@ export class StoryService {
         this.imageDownloadURL = fileRef.getDownloadURL();
         this.imageDownloadURL.subscribe(url => {
           if (url) {
-            story.imageURL = url;
-            this.createStorywithImageURL( story );
+            this.story.imageURL = url;
+            this.isImageReady = true;
+            if( this.areChoicesIdsReady == 2){
+              this.createStorywithImageURLandChoicesIds();
+            }
           }
           console.log(story.imageURL);
         });
       })
     ).subscribe();
+  }
+
+
+  createOpenEndings(option1, option2){
+    let storyOne = new Story();
+    let storyTwo = new Story();
+    storyOne.title = option1.text;
+    storyTwo.title = option2.text;
+
+
+    this.storiessRef.add({ ...storyOne }).then((res) => {
+      console.log('Created new choice story item successfully!');
+      console.log('story id: ' + res.id);
+      debugger;
+      this.story.choice_one.id = res.id;
+      this.areChoicesIdsReady += 1;
+      if( this.isImageReady && this.areChoicesIdsReady == 2){
+        this.createStorywithImageURLandChoicesIds();
+      }
+    }).catch((error)=> {
+      console.log("Problem in createOpenEndings->" + error);
+    });
+
+    this.storiessRef.add({ ...storyTwo }).then((res) => {
+      console.log('Created new choice story item successfully!');
+      console.log('story id: ' + res.id);
+      
+      this.story.choice_two.id = res.id;
+      this.areChoicesIdsReady += 1;
+      if( this.isImageReady && this.areChoicesIdsReady == 2){
+        this.createStorywithImageURLandChoicesIds();
+      }
+    }).catch((error)=> {
+      console.log("Problem in createOpenEndings->" + error);
+    });
+    
+  }
+
+  deleteStory(id: string): Promise<void> {
+    return this.storiessRef.doc(id).delete();
+  }
+
+  getStories() { 
+    return this.storiessRef;
   }
 }

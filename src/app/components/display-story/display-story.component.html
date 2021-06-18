@@ -1,17 +1,16 @@
 
 
-<div class= 'story-container'>
+<div *ngIf='story.text' class= 'story-container'>
     <div *ngIf="!editing; else displayEditMode" >
         <h2> {{ story.title }} </h2> <span class='author'> By: {{ story.author }}</span>
         <img [src]="story.imageURL|| story.image"/>
         <h3> {{ story.text }} </h3> 
         <div> {{ story.pulse }} </div>
     
-        <a (click)="makeChoice($event.target)" class="choice-btn one"> {{story.choice_one.title || story.choice_one}}</a>
+        <a (click)="makeChoice($event.target)" class="choice-btn one"> {{story.choice_one.text || story.choice_one}}</a>
        
-        <a (click)="makeChoice($event.target)" class="choice-btn two"> {{story.choice_two.title || story.choice_two}}</a>
+        <a (click)="makeChoice($event.target)" class="choice-btn two"> {{story.choice_two.text || story.choice_two}}</a>
     </div>
-
     
     <ng-template #displayEditMode>
         <app-edit-story [parent]="story" [choice]="chosenChoice"></app-edit-story>
