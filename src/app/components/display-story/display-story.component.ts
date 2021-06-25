@@ -26,29 +26,31 @@ export class DisplayStoryComponent implements OnInit {
   }
 
   makeChoice(target): void{
-    this.chosenChoice = target.innerText;
+    let chosenChoice = target.className;
+    let choiceID = this.story[chosenChoice].id;
+    this.storyService.getStoryByID(choiceID);
+    debugger;
 
     // if chosen option has content:
     //   display the content on the same component
     // else open edit mode on the same component
-    if( this.story.choice_one.text ){
-      this.displayNextOutcome();
-    } else {
-      this.openEditChoiceMode();
-    }
+    
   }
 
-  displayNextOutcome(){
+  // openEditChoiceMode(){
 
-    console.log("there is a story submitted for this choice");
-    // TODO: sliding effect of the prev story, 
-    // display the chosen choice.content on the same component
-  }
+  //   this.editing = true;
+  //   console.log("opening edit choice mode");
+  //   // TODO: sliding effect of the prev story, title becomes the chosen choice text
+  // }
 
-  openEditChoiceMode(){
 
-    this.editing = true;
-    console.log("opening edit choice mode");
-    // TODO: sliding effect of the prev story, title becomes the chosen choice text
-  }
+  // What i did and what to do
+  /* created two empty stories as the choices, with their id in the parent.
+  when one of the choice buttons is pressed -the id is knwn and getStory is called with this id
+   if the recieved story doesnot have content tex - edit this story, 
+   else the story is displayed.
+  
+  
+  */
 }

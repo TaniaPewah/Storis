@@ -114,6 +114,10 @@ export class StoryService {
     return this.storiessRef.doc(id).delete();
   }
 
+  getStoryByID( id: string) { 
+    return this.storiessRef.doc(id).get();
+  }
+
   getStories() { 
     return this.storiessRef;
   }

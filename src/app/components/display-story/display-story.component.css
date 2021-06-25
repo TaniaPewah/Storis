@@ -83,11 +83,11 @@ img{
     text-decoration: none;
     text-shadow: 0px 1px 0px #ffffff;
 }
-.choice-btn:hover {
+.choice-btn div:hover {
 	background:linear-gradient(to bottom,#9edfc3 5%, #f8ffe4 100%);
 	background-color:#9edfc3;
 }
-.choice-btn:active {
+.choice-btn div:active {
 	position:relative;
 	top:1px;
 }
